@@ -1,0 +1,39 @@
+# Sistemes operatius
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Cursor
+.cursor/
+
+# Node / package managers (per si en algun moment afegim build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.pnp
+.pnp.js
+
+# Logs i temporals
+*.log
+*.tmp
+*.temp
+
+# Vídeos gravats per l'app (no haurien d'anar al repo)
+*.webm
+*.mp4
+*.mov
+
+# Builds (si en algun moment hi haguessin)
+dist/
+build/
+out/

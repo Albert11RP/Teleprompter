@@ -1,0 +1,109 @@
+{
+  "languageName": "Español",
+  "brand": {
+    "name": "Teleprompter",
+    "tagline": "Graba y lee con naturalidad"
+  },
+  "toggle": {
+    "collapse": "Plegar el menú",
+    "expand": "Desplegar el menú"
+  },
+  "steps": {
+    "script": "Guion",
+    "settings": "Ajustes",
+    "record": "Grabar"
+  },
+  "script": {
+    "heading": "Tu guion",
+    "placeholder": "Pega o escribe tu guion aquí…\n\nConsejo: habla en voz alta mientras lo escribes para encontrar tu ritmo natural.",
+    "hint": "El texto se mostrará en directo en la pantalla de grabación.",
+    "wordsOne": "{{count}} palabra",
+    "wordsOther": "{{count}} palabras",
+    "promptPlaceholder": "Escribe tu guion en el panel de la izquierda para verlo aquí…"
+  },
+  "settings": {
+    "heading": "Ajustes de lectura",
+    "speed": "Velocidad",
+    "speedUnit": "{{wpm}} PPM",
+    "speedAria": "{{wpm}} palabras por minuto",
+    "fontSize": "Tamaño del texto",
+    "fontSizeUnit": "{{size}} px",
+    "view": "Visualización",
+    "dualScreen": "Segunda pantalla",
+    "dualScreenDesc": "Abre el teleprompter en otra ventana (ideal para dos monitores)",
+    "language": "Idioma"
+  },
+  "preset": {
+    "slow": "Lento",
+    "normal": "Normal",
+    "fast": "Rápido"
+  },
+  "speedHint": {
+    "ideal": "Ritmo conversacional ideal (130–160 PPM)",
+    "slow": "Velocidad lenta — ideal para presentaciones formales",
+    "fast": "Velocidad rápida — practica antes de grabar"
+  },
+  "view": {
+    "camera": "Con cámara",
+    "prompter": "Solo teleprompter",
+    "hint": "<strong>Con cámara</strong>: la cámara ocupa el fondo del teleprompter.<br><strong>Solo teleprompter</strong>: fondo oscuro y vista previa pequeña arrastrable."
+  },
+  "camera": {
+    "requesting": "Solicitando acceso a la cámara…",
+    "ready": "Cámara activa",
+    "pipLabel": "Tu cámara",
+    "drag": "Arrastra",
+    "promptTitle": "Hay que activar la cámara y el micrófono para grabar el vídeo.",
+    "promptButton": "Activar cámara y micrófono",
+    "waitingText": "Comprueba el diálogo del navegador y acepta cámara y micrófono…",
+    "waitingButton": "Esperando permiso…",
+    "errorPermission": "Permiso denegado. Haz clic en el candado de la barra de direcciones y permite cámara y micrófono.",
+    "errorNotFound": "No se ha encontrado ninguna cámara. Conecta una e inténtalo de nuevo.",
+    "errorInUse": "La cámara está en uso por otra aplicación. Ciérrala e inténtalo de nuevo.",
+    "errorGeneric": "No se ha podido acceder a la cámara. Inténtalo de nuevo.",
+    "errorLocalShort": "Abre la app vía http://localhost — los archivos locales no permiten cámara.",
+    "errorLocalLong": "El navegador no permite la cámara en archivos locales. Abre la app con http://localhost (servidor local).",
+    "errorLocalButton": "Requiere servidor local"
+  },
+  "actions": {
+    "record": "Iniciar grabación",
+    "recording": "Grabando…",
+    "paused": "En pausa",
+    "preparing": "Preparando…",
+    "needScript": "Escribe un guion primero",
+    "waitingCamera": "Esperando cámara…",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "finish": "Finalizar",
+    "download": "Descargar vídeo"
+  },
+  "status": {
+    "writeScript": "Escribe el guion para empezar",
+    "ready": "Listo para grabar",
+    "recording": "Grabando…",
+    "preparing": "Preparando grabación…",
+    "paused": "Grabación en pausa",
+    "done": "Grabación finalizada — descarga el vídeo",
+    "cameraUnavailable": "Cámara no disponible",
+    "cameraUnavailableLocal": "Abre via http://localhost para usar la cámara",
+    "connected": "Segunda pantalla conectada",
+    "openingPrompter": "Abriendo segunda pantalla…",
+    "blockedPopup": "Permite ventanas emergentes para usar la segunda pantalla",
+    "recordError": "Error al iniciar la grabación — inténtalo de nuevo",
+    "cameraPermsCheck": "Cámara no disponible — comprueba los permisos"
+  },
+  "prompterWindow": {
+    "readingZone": "Lee aquí",
+    "waiting": "Esperando el guion del panel de control…",
+    "cameraFailedLocal": "Abre la app via http://localhost para usar la cámara.",
+    "cameraFailedPerms": "Permiso de cámara denegado. Permite el acceso en el navegador.",
+    "cameraFailedGeneric": "No se ha podido acceder a la cámara."
+  },
+  "footer": {
+    "hotkeys": "<kbd>Espacio</kbd> pausa · <kbd>Esc</kbd> finaliza",
+    "duration": "Duración estimada:"
+  },
+  "countdown": {
+    "go": "¡Ya!"
+  }
+}

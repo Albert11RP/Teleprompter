@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter — Pantalla de gravació</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="prompter-window">
+    <div class="prompter-only stage view-camera" id="prompterStage">
+        <div id="countdown" class="countdown" aria-live="assertive" aria-atomic="true"></div>
+        <div id="recordingTimer" class="rec-badge" aria-live="off">REC 00:00</div>
+
+        <div class="stage-inner" id="stageInner">
+            <div class="prompter-zone" id="prompterZone">
+                <div class="prompter" id="prompterContainer">
+                    <div class="reading-zone" aria-hidden="true">
+                        <span class="reading-zone-label" data-i18n="prompterWindow.readingZone">Llegeix aquí</span>
+                    </div>
+                    <div class="scroll-viewport" id="scrollWrapper">
+                        <div id="prompterText" class="prompter-text" data-i18n="prompterWindow.waiting">
+                            Esperant el guió del panell de control…
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cameraPip" class="camera-pip" role="region" aria-label="Preview de càmera">
+                    <div class="camera-pip-handle" aria-label="Arrossega per moure">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/>
+                            <circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/>
+                            <circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/>
+                        </svg>
+                        <span data-i18n="camera.pipLabel">La teva càmera</span>
+                    </div>
+                    <div class="camera-pip-video">
+                        <video id="videoPreview" autoplay muted playsinline aria-label="Càmera"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="script-prompter.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{
+  "languageName": "English",
+  "brand": {
+    "name": "Teleprompter",
+    "tagline": "Record and read with confidence"
+  },
+  "toggle": {
+    "collapse": "Collapse menu",
+    "expand": "Expand menu"
+  },
+  "steps": {
+    "script": "Script",
+    "settings": "Settings",
+    "record": "Record"
+  },
+  "script": {
+    "heading": "Your script",
+    "placeholder": "Paste or type your script here…\n\nTip: speak out loud while writing it to find your natural rhythm.",
+    "hint": "The text will appear live on the recording screen.",
+    "wordsOne": "{{count}} word",
+    "wordsOther": "{{count}} words",
+    "promptPlaceholder": "Type your script in the left panel to see it here…"
+  },
+  "settings": {
+    "heading": "Reading settings",
+    "speed": "Speed",
+    "speedUnit": "{{wpm}} WPM",
+    "speedAria": "{{wpm}} words per minute",
+    "fontSize": "Text size",
+    "fontSizeUnit": "{{size}} px",
+    "view": "View",
+    "dualScreen": "Second screen",
+    "dualScreenDesc": "Open the teleprompter in another window (great for dual monitors)",
+    "language": "Language"
+  },
+  "preset": {
+    "slow": "Slow",
+    "normal": "Normal",
+    "fast": "Fast"
+  },
+  "speedHint": {
+    "ideal": "Ideal conversational pace (130–160 WPM)",
+    "slow": "Slow pace — great for formal presentations",
+    "fast": "Fast pace — practice before recording"
+  },
+  "view": {
+    "camera": "With camera",
+    "prompter": "Teleprompter only",
+    "hint": "<strong>With camera</strong>: the camera fills the teleprompter background.<br><strong>Teleprompter only</strong>: dark background with a small draggable preview."
+  },
+  "camera": {
+    "requesting": "Requesting camera access…",
+    "ready": "Camera active",
+    "pipLabel": "Your camera",
+    "drag": "Drag",
+    "promptTitle": "You need to enable the camera and microphone to record video.",
+    "promptButton": "Enable camera and microphone",
+    "waitingText": "Check your browser's dialog and allow camera and microphone…",
+    "waitingButton": "Waiting for permission…",
+    "errorPermission": "Permission denied. Click the lock in the address bar and allow camera and microphone.",
+    "errorNotFound": "No camera found. Connect one and try again.",
+    "errorInUse": "The camera is in use by another app. Close it and try again.",
+    "errorGeneric": "Could not access the camera. Please try again.",
+    "errorLocalShort": "Open the app via http://localhost — local files don't allow camera.",
+    "errorLocalLong": "Your browser doesn't allow camera on local files. Open the app via http://localhost (local server).",
+    "errorLocalButton": "Requires local server"
+  },
+  "actions": {
+    "record": "Start recording",
+    "recording": "Recording…",
+    "paused": "Paused",
+    "preparing": "Preparing…",
+    "needScript": "Write a script first",
+    "waitingCamera": "Waiting for camera…",
+    "pause": "Pause",
+    "resume": "Resume",
+    "finish": "Finish",
+    "download": "Download video"
+  },
+  "status": {
+    "writeScript": "Write a script to start",
+    "ready": "Ready to record",
+    "recording": "Recording…",
+    "preparing": "Preparing recording…",
+    "paused": "Recording paused",
+    "done": "Recording finished — download the video",
+    "cameraUnavailable": "Camera unavailable",
+    "cameraUnavailableLocal": "Open via http://localhost to use the camera",
+    "connected": "Second screen connected",
+    "openingPrompter": "Opening second screen…",
+    "blockedPopup": "Allow popups to use the second screen",
+    "recordError": "Error starting the recording — try again",
+    "cameraPermsCheck": "Camera unavailable — check permissions"
+  },
+  "prompterWindow": {
+    "readingZone": "Read here",
+    "waiting": "Waiting for the script from the control panel…",
+    "cameraFailedLocal": "Open the app via http://localhost to use the camera.",
+    "cameraFailedPerms": "Camera permission denied. Allow access in the browser.",
+    "cameraFailedGeneric": "Could not access the camera."
+  },
+  "footer": {
+    "hotkeys": "<kbd>Space</kbd> pause · <kbd>Esc</kbd> finish",
+    "duration": "Estimated duration:"
+  },
+  "countdown": {
+    "go": "Go!"
+  }
+}

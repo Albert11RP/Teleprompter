@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app" id="app">
+        <aside class="sidebar" id="sidebar" data-i18n-attr="aria-label:settings.heading" aria-label="Controls">
+            <header class="brand">
+                <div class="brand-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <line x1="6" y1="12" x2="18" y2="12"/>
+                        <line x1="6" y1="8" x2="14" y2="8"/>
+                        <line x1="6" y1="16" x2="12" y2="16"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1 data-i18n="brand.name">Teleprompter</h1>
+                    <p class="brand-tagline" data-i18n="brand.tagline">Grava i llegeix amb naturalitat</p>
+                </div>
+                <button
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    type="button"
+                    aria-label="Plega el menú"
+                    aria-expanded="true"
+                    aria-controls="sidebar"
+                    title="Plega el menú"
+                >
+                    <svg class="icon-collapse" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                    <svg class="icon-expand" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </header>
+
+            <ol class="steps" aria-label="Passos">
+                <li class="step step-active" data-step="1">
+                    <span class="step-num">1</span>
+                    <span class="step-label" data-i18n="steps.script">Guió</span>
+                </li>
+                <li class="step" data-step="2">
+                    <span class="step-num">2</span>
+                    <span class="step-label" data-i18n="steps.settings">Ajustos</span>
+                </li>
+                <li class="step" data-step="3">
+                    <span class="step-num">3</span>
+                    <span class="step-label" data-i18n="steps.record">Gravar</span>
+                </li>
+            </ol>
+
+            <section class="card" aria-labelledby="script-heading">
+                <div class="card-header">
+                    <h2 id="script-heading" data-i18n="script.heading">El teu guió</h2>
+                    <span id="wordCount" class="badge">0 paraules</span>
+                </div>
+                <textarea
+                    id="scriptInput"
+                    data-i18n-attr="placeholder:script.placeholder"
+                    placeholder="Enganxa o escriu el teu guió aquí…&#10;&#10;Consell: parla en veu alta mentre l'escrius per trobar el ritme natural."
+                    rows="8"
+                    aria-describedby="script-hint"
+                ></textarea>
+                <p id="script-hint" class="hint" data-i18n="script.hint">El text es mostrarà en directe a la pantalla de gravació.</p>
+            </section>
+
+            <section class="card" aria-labelledby="settings-heading">
+                <h2 id="settings-heading" data-i18n="settings.heading">Ajustos de lectura</h2>
+
+                <div class="setting">
+                    <div class="setting-header">
+                        <label for="wpmRange" data-i18n="settings.speed">Velocitat</label>
+                        <span id="wpmValue" class="setting-value">120 PPM</span>
+                    </div>
+                    <div class="presets" role="group" aria-label="Velocitat predefinida">
+                        <button type="button" class="preset" data-wpm="90" data-i18n="preset.slow">Lent</button>
+                        <button type="button" class="preset preset-active" data-wpm="120" data-i18n="preset.normal">Normal</button>
+                        <button type="button" class="preset" data-wpm="150" data-i18n="preset.fast">Ràpid</button>
+                    </div>
+                    <input type="range" id="wpmRange" min="60" max="200" value="120" aria-valuetext="120 paraules per minut">
+                    <p id="wpmHint" class="hint hint-success" data-i18n="speedHint.ideal">Ritme conversacional ideal (130–160 PPM)</p>
+                </div>
+
+                <div class="setting">
+                    <div class="setting-header">
+                        <label for="fontSizeRange" data-i18n="settings.fontSize">Mida del text</label>
+                        <span id="fontSizeValue" class="setting-value">48 px</span>
+                    </div>
+                    <input type="range" id="fontSizeRange" min="28" max="96" value="48">
+                </div>
+
+                <div class="setting">
+                    <label class="setting-header" data-i18n="settings.view">Visualització</label>
+                    <div class="view-mode-toggle" role="group" aria-label="Mode de visualització">
+                        <button type="button" class="view-mode-btn view-mode-active" data-view="camera" data-i18n="view.camera">Amb càmera</button>
+                        <button type="button" class="view-mode-btn" data-view="prompter" data-i18n="view.prompter">Només teleprompter</button>
+                    </div>
+                    <p class="hint" data-i18n-html="view.hint"><strong>Amb càmera</strong>: la càmera ocupa el fons del teleprompter.<br><strong>Només teleprompter</strong>: fons fosc i preview petit arrossegable.</p>
+                </div>
+
+                <div class="setting">
+                    <label class="setting-header" for="languageSelect" data-i18n="settings.language">Idioma</label>
+                    <select id="languageSelect" class="language-select"></select>
+                </div>
+
+                <label class="toggle-row">
+                    <input type="checkbox" id="dualScreenToggle">
+                    <span class="toggle-track" aria-hidden="true"></span>
+                    <span class="toggle-label">
+                        <strong data-i18n="settings.dualScreen">Pantalla segona</strong>
+                        <small data-i18n="settings.dualScreenDesc">Obre el teleprompter en una altra finestra (ideal per a dos monitors)</small>
+                    </span>
+                </label>
+            </section>
+
+            <section class="actions" data-i18n-attr="aria-label:steps.record" aria-label="Gravació">
+                <div id="statusBar" class="status-bar status-idle" role="status" aria-live="polite">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span id="statusText" data-i18n="status.ready">Preparat per gravar</span>
+                </div>
+
+                <div id="cameraPrompt" class="camera-prompt">
+                    <p id="cameraPromptText" data-i18n="camera.promptTitle">Cal activar la càmera i el micròfon per gravar.</p>
+                    <button id="enableCameraBtn" class="btn-enable-camera" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                        <span data-i18n="camera.promptButton">Activar càmera i micròfon</span>
+                    </button>
+                </div>
+
+                <button id="recordBtn" class="btn-record" type="button">
+                    <span class="btn-record-icon" aria-hidden="true"></span>
+                    <span id="recordBtnLabel" data-i18n="actions.record">Iniciar gravació</span>
+                </button>
+
+                <div class="action-row">
+                    <button id="pauseBtn" class="btn-secondary" type="button" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        <span data-i18n="actions.pause">Pausar</span>
+                    </button>
+                    <button id="finishBtn" class="btn-secondary" type="button" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                        <span data-i18n="actions.finish">Finalitzar</span>
+                    </button>
+                </div>
+
+                <button id="downloadBtn" class="btn-download" type="button" disabled>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span data-i18n="actions.download">Descarregar vídeo</span>
+                </button>
+            </section>
+
+            <footer class="sidebar-footer">
+                <p data-i18n-html="footer.hotkeys"><kbd>Espai</kbd> pausa · <kbd>Esc</kbd> finalitza</p>
+                <p class="duration-estimate"><span data-i18n="footer.duration">Durada estimada:</span> <strong id="estimatedTime">00:00</strong></p>
+            </footer>
+        </aside>
+
+        <main class="stage view-camera" data-i18n-attr="aria-label:prompterWindow.readingZone" aria-label="Previsualització">
+            <div id="cameraBanner" class="camera-banner hidden" role="alert">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                <span id="cameraBannerText">S'està demanant accés a la càmera…</span>
+            </div>
+
+            <div id="countdown" class="countdown" aria-live="assertive" aria-atomic="true"></div>
+            <div id="recordingTimer" class="rec-badge" aria-live="off">REC 00:00</div>
+
+            <div class="stage-inner" id="stageInner">
+                <div class="prompter-zone" id="prompterZone">
+                    <div class="prompter" id="prompterContainer">
+                        <div class="reading-zone" aria-hidden="true">
+                            <span class="reading-zone-label" data-i18n="prompterWindow.readingZone">Llegeix aquí</span>
+                        </div>
+                        <div class="scroll-viewport" id="scrollWrapper">
+                            <div id="prompterText" class="prompter-text" data-i18n="script.promptPlaceholder">
+                                Escriu el teu guió al panell de l'esquerra per veure'l aquí…
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cameraPip" class="camera-pip" role="region" data-i18n-attr="aria-label:camera.pipLabel" aria-label="Preview de càmera">
+                        <div class="camera-pip-handle" aria-label="Arrossega per moure">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/>
+                                <circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/>
+                                <circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/>
+                            </svg>
+                            <span data-i18n="camera.pipLabel">La teva càmera</span>
+                        </div>
+                        <div class="camera-pip-video">
+                            <video id="videoPreview" autoplay muted playsinline aria-label="Previsualització de càmera"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

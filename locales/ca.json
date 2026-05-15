@@ -1,0 +1,109 @@
+{
+  "languageName": "Català",
+  "brand": {
+    "name": "Teleprompter",
+    "tagline": "Grava i llegeix amb naturalitat"
+  },
+  "toggle": {
+    "collapse": "Plega el menú",
+    "expand": "Desplega el menú"
+  },
+  "steps": {
+    "script": "Guió",
+    "settings": "Ajustos",
+    "record": "Gravar"
+  },
+  "script": {
+    "heading": "El teu guió",
+    "placeholder": "Enganxa o escriu el teu guió aquí…\n\nConsell: parla en veu alta mentre l'escrius per trobar el ritme natural.",
+    "hint": "El text es mostrarà en directe a la pantalla de gravació.",
+    "wordsOne": "{{count}} paraula",
+    "wordsOther": "{{count}} paraules",
+    "promptPlaceholder": "Escriu el teu guió al panell de l'esquerra per veure'l aquí…"
+  },
+  "settings": {
+    "heading": "Ajustos de lectura",
+    "speed": "Velocitat",
+    "speedUnit": "{{wpm}} PPM",
+    "speedAria": "{{wpm}} paraules per minut",
+    "fontSize": "Mida del text",
+    "fontSizeUnit": "{{size}} px",
+    "view": "Visualització",
+    "dualScreen": "Pantalla segona",
+    "dualScreenDesc": "Obre el teleprompter en una altra finestra (ideal per a dos monitors)",
+    "language": "Idioma"
+  },
+  "preset": {
+    "slow": "Lent",
+    "normal": "Normal",
+    "fast": "Ràpid"
+  },
+  "speedHint": {
+    "ideal": "Ritme conversacional ideal (130–160 PPM)",
+    "slow": "Velocitat lenta — ideal per a presentacions formals",
+    "fast": "Velocitat ràpida — practica abans de gravar"
+  },
+  "view": {
+    "camera": "Amb càmera",
+    "prompter": "Només teleprompter",
+    "hint": "<strong>Amb càmera</strong>: la càmera ocupa el fons del teleprompter.<br><strong>Només teleprompter</strong>: fons fosc i preview petit arrossegable."
+  },
+  "camera": {
+    "requesting": "S'està demanant accés a la càmera…",
+    "ready": "Càmera activa",
+    "pipLabel": "La teva càmera",
+    "drag": "Arrossega",
+    "promptTitle": "Cal activar la càmera i el micròfon per gravar el vídeo.",
+    "promptButton": "Activar càmera i micròfon",
+    "waitingText": "Comprova el diàleg del navegador i accepta càmera i micròfon…",
+    "waitingButton": "Esperant permís…",
+    "errorPermission": "Permís denegat. Clica el cadenat de la barra d'adreces i permet càmera i micròfon.",
+    "errorNotFound": "No s'ha trobat cap càmera. Connecta'n una i torna-ho a provar.",
+    "errorInUse": "La càmera està en ús per una altra aplicació. Tanca-la i torna-ho a provar.",
+    "errorGeneric": "No s'ha pogut accedir a la càmera. Torna-ho a provar.",
+    "errorLocalShort": "Obre l'app via http://localhost — els fitxers locals no permeten càmera.",
+    "errorLocalLong": "El navegador no permet la càmera en fitxers locals. Obre l'app amb http://localhost (servidor local).",
+    "errorLocalButton": "Requereix servidor local"
+  },
+  "actions": {
+    "record": "Iniciar gravació",
+    "recording": "Gravant…",
+    "paused": "En pausa",
+    "preparing": "Preparant…",
+    "needScript": "Escriu un guió primer",
+    "waitingCamera": "Esperant càmera…",
+    "pause": "Pausar",
+    "resume": "Reprendre",
+    "finish": "Finalitzar",
+    "download": "Descarregar vídeo"
+  },
+  "status": {
+    "writeScript": "Escriu el guió per començar",
+    "ready": "Preparat per gravar",
+    "recording": "Gravant…",
+    "preparing": "Preparant gravació…",
+    "paused": "Gravació en pausa",
+    "done": "Gravació finalitzada — descarrega el vídeo",
+    "cameraUnavailable": "Càmera no disponible",
+    "cameraUnavailableLocal": "Obre via http://localhost per usar la càmera",
+    "connected": "Pantalla segona connectada",
+    "openingPrompter": "Obrint pantalla segona…",
+    "blockedPopup": "Permet finestres emergents per usar la pantalla segona",
+    "recordError": "Error en iniciar la gravació — torna-ho a provar",
+    "cameraPermsCheck": "Càmera no disponible — comprova els permisos"
+  },
+  "prompterWindow": {
+    "readingZone": "Llegeix aquí",
+    "waiting": "Esperant el guió del panell de control…",
+    "cameraFailedLocal": "Obre l'app via http://localhost per usar la càmera.",
+    "cameraFailedPerms": "Permís de càmera denegat. Permet l'accés al navegador.",
+    "cameraFailedGeneric": "No s'ha pogut accedir a la càmera."
+  },
+  "footer": {
+    "hotkeys": "<kbd>Espai</kbd> pausa · <kbd>Esc</kbd> finalitza",
+    "duration": "Durada estimada:"
+  },
+  "countdown": {
+    "go": "Vés!"
+  }
+}

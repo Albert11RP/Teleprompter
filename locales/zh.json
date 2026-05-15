@@ -1,0 +1,109 @@
+{
+  "languageName": "中文",
+  "brand": {
+    "name": "提词器",
+    "tagline": "自然地录制和阅读"
+  },
+  "toggle": {
+    "collapse": "收起菜单",
+    "expand": "展开菜单"
+  },
+  "steps": {
+    "script": "脚本",
+    "settings": "设置",
+    "record": "录制"
+  },
+  "script": {
+    "heading": "你的脚本",
+    "placeholder": "在此粘贴或输入你的脚本…\n\n小贴士:边写边大声朗读,找到自然的节奏。",
+    "hint": "文字将在录制屏幕实时显示。",
+    "wordsOne": "{{count}} 个字",
+    "wordsOther": "{{count}} 个字",
+    "promptPlaceholder": "在左侧面板输入你的脚本以在此显示…"
+  },
+  "settings": {
+    "heading": "朗读设置",
+    "speed": "速度",
+    "speedUnit": "{{wpm}} 字/分",
+    "speedAria": "{{wpm}} 字每分钟",
+    "fontSize": "文字大小",
+    "fontSizeUnit": "{{size}} px",
+    "view": "视图",
+    "dualScreen": "副屏",
+    "dualScreenDesc": "在另一个窗口打开提词器(适合双显示器)",
+    "language": "语言"
+  },
+  "preset": {
+    "slow": "慢速",
+    "normal": "正常",
+    "fast": "快速"
+  },
+  "speedHint": {
+    "ideal": "理想对话节奏 (130–160 字/分)",
+    "slow": "慢速 — 适合正式演示",
+    "fast": "快速 — 录制前请多练习"
+  },
+  "view": {
+    "camera": "带摄像头",
+    "prompter": "仅提词器",
+    "hint": "<strong>带摄像头</strong>:摄像头作为提词器背景。<br><strong>仅提词器</strong>:深色背景,小预览框可拖动。"
+  },
+  "camera": {
+    "requesting": "正在请求摄像头权限…",
+    "ready": "摄像头已激活",
+    "pipLabel": "你的摄像头",
+    "drag": "拖动",
+    "promptTitle": "录制视频需要启用摄像头和麦克风。",
+    "promptButton": "启用摄像头和麦克风",
+    "waitingText": "请查看浏览器对话框,允许摄像头和麦克风…",
+    "waitingButton": "等待授权…",
+    "errorPermission": "权限被拒绝。点击地址栏的锁图标,允许摄像头和麦克风。",
+    "errorNotFound": "未找到摄像头。请连接后重试。",
+    "errorInUse": "摄像头正被其他应用使用。请关闭后重试。",
+    "errorGeneric": "无法访问摄像头。请重试。",
+    "errorLocalShort": "请通过 http://localhost 打开应用 — 本地文件不支持摄像头。",
+    "errorLocalLong": "浏览器不允许在本地文件中使用摄像头。请通过 http://localhost(本地服务器)打开应用。",
+    "errorLocalButton": "需要本地服务器"
+  },
+  "actions": {
+    "record": "开始录制",
+    "recording": "录制中…",
+    "paused": "已暂停",
+    "preparing": "准备中…",
+    "needScript": "请先写脚本",
+    "waitingCamera": "等待摄像头…",
+    "pause": "暂停",
+    "resume": "继续",
+    "finish": "完成",
+    "download": "下载视频"
+  },
+  "status": {
+    "writeScript": "写脚本开始",
+    "ready": "准备录制",
+    "recording": "录制中…",
+    "preparing": "准备录制中…",
+    "paused": "录制已暂停",
+    "done": "录制完成 — 下载视频",
+    "cameraUnavailable": "摄像头不可用",
+    "cameraUnavailableLocal": "通过 http://localhost 打开以使用摄像头",
+    "connected": "副屏已连接",
+    "openingPrompter": "正在打开副屏…",
+    "blockedPopup": "请允许弹出窗口以使用副屏",
+    "recordError": "录制启动失败 — 请重试",
+    "cameraPermsCheck": "摄像头不可用 — 请检查权限"
+  },
+  "prompterWindow": {
+    "readingZone": "在此阅读",
+    "waiting": "等待控制面板的脚本…",
+    "cameraFailedLocal": "请通过 http://localhost 打开应用以使用摄像头。",
+    "cameraFailedPerms": "摄像头权限被拒绝。请在浏览器中允许访问。",
+    "cameraFailedGeneric": "无法访问摄像头。"
+  },
+  "footer": {
+    "hotkeys": "<kbd>空格</kbd> 暂停 · <kbd>Esc</kbd> 完成",
+    "duration": "预计时长:"
+  },
+  "countdown": {
+    "go": "开始!"
+  }
+}

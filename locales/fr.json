@@ -1,0 +1,109 @@
+{
+  "languageName": "Français",
+  "brand": {
+    "name": "Téléprompteur",
+    "tagline": "Enregistre et lis avec naturel"
+  },
+  "toggle": {
+    "collapse": "Réduire le menu",
+    "expand": "Développer le menu"
+  },
+  "steps": {
+    "script": "Texte",
+    "settings": "Réglages",
+    "record": "Enregistrer"
+  },
+  "script": {
+    "heading": "Ton texte",
+    "placeholder": "Colle ou écris ton texte ici…\n\nAstuce : lis-le à voix haute pendant que tu l'écris pour trouver ton rythme naturel.",
+    "hint": "Le texte s'affichera en direct sur l'écran d'enregistrement.",
+    "wordsOne": "{{count}} mot",
+    "wordsOther": "{{count}} mots",
+    "promptPlaceholder": "Écris ton texte dans le panneau de gauche pour le voir ici…"
+  },
+  "settings": {
+    "heading": "Réglages de lecture",
+    "speed": "Vitesse",
+    "speedUnit": "{{wpm}} MPM",
+    "speedAria": "{{wpm}} mots par minute",
+    "fontSize": "Taille du texte",
+    "fontSizeUnit": "{{size}} px",
+    "view": "Affichage",
+    "dualScreen": "Deuxième écran",
+    "dualScreenDesc": "Ouvre le téléprompteur dans une autre fenêtre (idéal pour deux moniteurs)",
+    "language": "Langue"
+  },
+  "preset": {
+    "slow": "Lent",
+    "normal": "Normal",
+    "fast": "Rapide"
+  },
+  "speedHint": {
+    "ideal": "Rythme de conversation idéal (130–160 MPM)",
+    "slow": "Vitesse lente — idéal pour les présentations formelles",
+    "fast": "Vitesse rapide — entraîne-toi avant d'enregistrer"
+  },
+  "view": {
+    "camera": "Avec caméra",
+    "prompter": "Téléprompteur seul",
+    "hint": "<strong>Avec caméra</strong> : la caméra occupe l'arrière-plan du téléprompteur.<br><strong>Téléprompteur seul</strong> : fond sombre avec un petit aperçu déplaçable."
+  },
+  "camera": {
+    "requesting": "Demande d'accès à la caméra…",
+    "ready": "Caméra active",
+    "pipLabel": "Ta caméra",
+    "drag": "Glisser",
+    "promptTitle": "Il faut activer la caméra et le micro pour enregistrer la vidéo.",
+    "promptButton": "Activer la caméra et le micro",
+    "waitingText": "Vérifie la boîte de dialogue du navigateur et accepte la caméra et le micro…",
+    "waitingButton": "En attente d'autorisation…",
+    "errorPermission": "Autorisation refusée. Clique sur le cadenas de la barre d'adresse et autorise la caméra et le micro.",
+    "errorNotFound": "Aucune caméra trouvée. Connecte-en une et réessaye.",
+    "errorInUse": "La caméra est utilisée par une autre application. Ferme-la et réessaye.",
+    "errorGeneric": "Impossible d'accéder à la caméra. Réessaye.",
+    "errorLocalShort": "Ouvre l'app via http://localhost — les fichiers locaux n'autorisent pas la caméra.",
+    "errorLocalLong": "Le navigateur n'autorise pas la caméra sur les fichiers locaux. Ouvre l'app avec http://localhost (serveur local).",
+    "errorLocalButton": "Serveur local requis"
+  },
+  "actions": {
+    "record": "Démarrer l'enregistrement",
+    "recording": "Enregistrement…",
+    "paused": "En pause",
+    "preparing": "Préparation…",
+    "needScript": "Écris un texte d'abord",
+    "waitingCamera": "Attente de la caméra…",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "finish": "Terminer",
+    "download": "Télécharger la vidéo"
+  },
+  "status": {
+    "writeScript": "Écris le texte pour commencer",
+    "ready": "Prêt à enregistrer",
+    "recording": "Enregistrement…",
+    "preparing": "Préparation de l'enregistrement…",
+    "paused": "Enregistrement en pause",
+    "done": "Enregistrement terminé — télécharge la vidéo",
+    "cameraUnavailable": "Caméra indisponible",
+    "cameraUnavailableLocal": "Ouvre via http://localhost pour utiliser la caméra",
+    "connected": "Deuxième écran connecté",
+    "openingPrompter": "Ouverture du deuxième écran…",
+    "blockedPopup": "Autorise les pop-ups pour utiliser le deuxième écran",
+    "recordError": "Erreur au lancement de l'enregistrement — réessaye",
+    "cameraPermsCheck": "Caméra indisponible — vérifie les autorisations"
+  },
+  "prompterWindow": {
+    "readingZone": "Lis ici",
+    "waiting": "En attente du texte depuis le panneau de contrôle…",
+    "cameraFailedLocal": "Ouvre l'app via http://localhost pour utiliser la caméra.",
+    "cameraFailedPerms": "Autorisation caméra refusée. Autorise l'accès dans le navigateur.",
+    "cameraFailedGeneric": "Impossible d'accéder à la caméra."
+  },
+  "footer": {
+    "hotkeys": "<kbd>Espace</kbd> pause · <kbd>Échap</kbd> terminer",
+    "duration": "Durée estimée :"
+  },
+  "countdown": {
+    "go": "Go !"
+  }
+}
