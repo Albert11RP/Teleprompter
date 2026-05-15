@@ -43,6 +43,16 @@
                 </button>
             </header>
 
+            <div class="language-row">
+                <svg class="language-row-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <label for="languageSelect" class="sr-only" data-i18n="settings.language">Idioma</label>
+                <select id="languageSelect" class="language-select" aria-label="Idioma"></select>
+            </div>
+
             <ol class="steps" aria-label="Passos">
                 <li class="step step-active" data-step="1">
                     <span class="step-num">1</span>
@@ -105,11 +115,6 @@
                         <button type="button" class="view-mode-btn" data-view="prompter" data-i18n="view.prompter">Només teleprompter</button>
                     </div>
                     <p class="hint" data-i18n-html="view.hint"><strong>Amb càmera</strong>: la càmera ocupa el fons del teleprompter.<br><strong>Només teleprompter</strong>: fons fosc i preview petit arrossegable.</p>
-                </div>
-
-                <div class="setting">
-                    <label class="setting-header" for="languageSelect" data-i18n="settings.language">Idioma</label>
-                    <select id="languageSelect" class="language-select"></select>
                 </div>
 
                 <label class="toggle-row">
@@ -181,7 +186,7 @@
             </div>
 
             <div id="countdown" class="countdown" aria-live="assertive" aria-atomic="true"></div>
-            <div id="recordingTimer" class="rec-badge" aria-live="off">REC 00:00</div>
+            <div id="recordingTimer" class="rec-badge" aria-live="off">00:00</div>
 
             <div class="stage-inner" id="stageInner">
                 <div class="prompter-zone" id="prompterZone">
