@@ -2,6 +2,8 @@
 
 [Català](README.md) · [Español](README.es.md) · **English** · [Français](README.fr.md) · [中文](README.zh.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
+### 🚀 Live demo: **[free-tele-prompter.netlify.app](https://free-tele-prompter.netlify.app)**
+
 ---
 
 Lightweight web teleprompter app with video recording, dual-screen support and an interface translated to **7 languages**.

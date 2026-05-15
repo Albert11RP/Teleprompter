@@ -4,6 +4,8 @@
 
 [Català](README.md) · [Español](README.es.md) · [English](README.en.md) · [Français](README.fr.md) · [中文](README.zh.md) · [हिन्दी](README.hi.md) · **العربية**
 
+### 🚀 تجربة مباشرة: **[free-tele-prompter.netlify.app](https://free-tele-prompter.netlify.app)**
+
 ---
 
 تطبيق ويب خفيف للملقّن مع تسجيل الفيديو، ودعم الشاشة المزدوجة، وواجهة مترجمة إلى **7 لغات**.

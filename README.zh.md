@@ -2,6 +2,8 @@
 
 [Català](README.md) · [Español](README.es.md) · [English](README.en.md) · [Français](README.fr.md) · **中文** · [हिन्दी](README.hi.md) · [العربية](README.ar.md)
 
+### 🚀 在线演示:**[free-tele-prompter.netlify.app](https://free-tele-prompter.netlify.app)**
+
 ---
 
 轻量级的网页提词器应用,支持视频录制、双屏模式,界面已翻译为 **7 种语言**。

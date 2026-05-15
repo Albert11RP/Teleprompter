@@ -2,6 +2,8 @@
 
 [Català](README.md) · [Español](README.es.md) · [English](README.en.md) · [Français](README.fr.md) · [中文](README.zh.md) · **हिन्दी** · [العربية](README.ar.md)
 
+### 🚀 लाइव डेमो: **[free-tele-prompter.netlify.app](https://free-tele-prompter.netlify.app)**
+
 ---
 
 हल्का वेब टेलीप्रॉम्प्टर ऐप जिसमें वीडियो रिकॉर्डिंग, डुअल-स्क्रीन सपोर्ट और **7 भाषाओं** में अनुवादित इंटरफ़ेस है।
