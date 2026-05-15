@@ -452,6 +452,7 @@ function updateEstimate() {
 
     const durationSec = state.targetWpm > 0 ? (words / state.targetWpm) * 60 : 0;
     els.estimatedTime.textContent = formatTime(durationSec > 0 ? durationSec + 3 : 0);
+    resetIdleTimerDisplay();
 
     els.prompterText.innerHTML = state.rawText
         ? state.rawText.replace(/\n/g, '<br><br>')
@@ -510,9 +511,10 @@ function stopScrolling() {
 
 // ── Timer ──
 function startTimer(isResume = false) {
-    if (!isResume) state.recordingStartTime = Date.now();
-    else {
-        const parts = els.recordingTimer.textContent.replace('REC ', '').split(':');
+    if (!isResume) {
+        state.recordingStartTime = Date.now();
+    } else {
+        const parts = els.recordingTimer.textContent.replace(/^REC\s*/i, '').split(':');
         const elapsed = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
         state.recordingStartTime = Date.now() - elapsed * 1000;
     }
@@ -529,6 +531,12 @@ function stopTimer() {
     if (state.timerInterval) clearInterval(state.timerInterval);
     els.recordingTimer.classList.remove('active');
     els.stage.classList.remove('is-recording');
+    resetIdleTimerDisplay();
+}
+
+function resetIdleTimerDisplay() {
+    if (['recording', 'paused', 'countdown'].includes(state.phase)) return;
+    els.recordingTimer.textContent = els.estimatedTime?.textContent || '00:00';
 }
 
 // ── Countdown ──

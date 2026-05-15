@@ -119,7 +119,7 @@ function formatTime(seconds) {
 function startTimer(isResume = false) {
     if (!isResume) recordingStartTime = Date.now();
     else {
-        const elapsed = parseTimer(recordingTimerEl.textContent.replace('REC ', ''));
+        const elapsed = parseTimer(recordingTimerEl.textContent.replace(/^REC\s*/i, ''));
         recordingStartTime = Date.now() - elapsed * 1000;
     }
 
@@ -133,7 +133,7 @@ function startTimer(isResume = false) {
 function stopTimer() {
     if (timerInterval) clearInterval(timerInterval);
     recordingTimerEl.classList.remove('active');
-    recordingTimerEl.textContent = 'REC 00:00';
+    recordingTimerEl.textContent = '00:00';
 }
 
 function parseTimer(text) {

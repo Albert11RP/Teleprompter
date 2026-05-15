@@ -43,14 +43,33 @@
                 </button>
             </header>
 
-            <div class="language-row">
-                <svg class="language-row-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M2 12h20"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-                <label for="languageSelect" class="sr-only" data-i18n="settings.language">Idioma</label>
-                <select id="languageSelect" class="language-select" aria-label="Idioma"></select>
+            <div class="language-dropdown" id="languageDropdown">
+                <button
+                    type="button"
+                    class="language-trigger"
+                    id="languageTrigger"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-label="Idioma"
+                >
+                    <svg class="language-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="language-current" id="languageCurrent">Català</span>
+                    <svg class="language-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <ul
+                    class="language-menu"
+                    id="languageMenu"
+                    role="listbox"
+                    aria-label="Idiomes disponibles"
+                    hidden
+                ></ul>
+                <select id="languageSelect" class="sr-only" aria-hidden="true" tabindex="-1"></select>
             </div>
 
             <ol class="steps" aria-label="Passos">
