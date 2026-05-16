@@ -38,6 +38,10 @@ const els = {
     enableCameraBtn: document.getElementById('enableCameraBtn'),
     sidebarToggle: document.getElementById('sidebarToggle'),
     languageSelect: document.getElementById('languageSelect'),
+    languageDropdown: document.getElementById('languageDropdown'),
+    languageTrigger: document.getElementById('languageTrigger'),
+    languageMenu: document.getElementById('languageMenu'),
+    languageCurrent: document.getElementById('languageCurrent'),
 };
 
 const t = (key, vars) => window.i18n ? window.i18n.t(key, vars) : key;
@@ -823,11 +827,12 @@ setInterval(() => {
             els.dualScreenToggle.checked = false;
             state.dualScreen = false;
             els.app.classList.remove('dual-screen');
-            if (state.phase === 'connected') {
-                const phase = hasScript() && state.cameraReady ? 'ready' : 'idle';
-                const key = hasScript() ? 'status.ready' : 'status.writeScript';
-                setStatusKey(phase, key);
+            // Si estàvem gravant a la segona pantalla, sortim de l'estat de gravació
+            if (['recording', 'paused', 'countdown'].includes(state.phase)) {
+                exitRecordingUI(false);
             }
+            // Reinicialitzem la càmera de la finestra principal
+            requestCamera().then(() => updateControls());
         }
     }
 }, 1000);
@@ -858,6 +863,103 @@ els.viewModeBtns.forEach((btn) => {
 });
 
 els.enableCameraBtn?.addEventListener('click', () => requestCamera());
+
+// ── Dropdown d'idioma personalitzat ──
+let languageDropdownData = [];
+
+async function setupLanguageDropdown() {
+    if (!els.languageTrigger || !els.languageMenu || !window.i18n?.getLanguageNames) return;
+
+    languageDropdownData = await window.i18n.getLanguageNames();
+    renderLanguageMenu();
+    refreshLanguageDropdown();
+
+    els.languageTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = els.languageTrigger.getAttribute('aria-expanded') === 'true';
+        toggleLanguageMenu(!open);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!els.languageDropdown.contains(e.target)) toggleLanguageMenu(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && els.languageTrigger.getAttribute('aria-expanded') === 'true') {
+            toggleLanguageMenu(false);
+            els.languageTrigger.focus();
+        }
+    });
+}
+
+function renderLanguageMenu() {
+    if (!els.languageMenu) return;
+    els.languageMenu.innerHTML = '';
+
+    languageDropdownData.forEach(({ code, name, flag }) => {
+        const li = document.createElement('li');
+        li.className = 'language-option';
+        li.setAttribute('role', 'option');
+        li.setAttribute('data-locale', code);
+        li.setAttribute('tabindex', '0');
+
+        li.innerHTML = `
+            <span class="language-option-flag" aria-hidden="true">${flag}</span>
+            <span class="language-option-name">${name}</span>
+            <svg class="language-option-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+        `;
+
+        const selectLocale = () => {
+            window.i18n.setLocale(code);
+            toggleLanguageMenu(false);
+            els.languageTrigger.focus();
+        };
+
+        li.addEventListener('click', selectLocale);
+        li.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                selectLocale();
+            }
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                li.nextElementSibling?.focus();
+            }
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                li.previousElementSibling?.focus();
+            }
+        });
+
+        els.languageMenu.appendChild(li);
+    });
+}
+
+function refreshLanguageDropdown() {
+    if (!els.languageCurrent) return;
+    const current = window.i18n?.getLocale();
+    const item = languageDropdownData.find((d) => d.code === current);
+    if (item) {
+        els.languageCurrent.textContent = item.name;
+        els.languageTrigger.setAttribute('aria-label', `${t('settings.language')}: ${item.name}`);
+    }
+
+    els.languageMenu?.querySelectorAll('.language-option').forEach((opt) => {
+        opt.setAttribute('aria-selected', opt.dataset.locale === current ? 'true' : 'false');
+    });
+}
+
+function toggleLanguageMenu(open) {
+    if (!els.languageMenu || !els.languageTrigger) return;
+    els.languageTrigger.setAttribute('aria-expanded', String(open));
+    els.languageMenu.hidden = !open;
+    if (open) {
+        const selected = els.languageMenu.querySelector('[aria-selected="true"]') || els.languageMenu.firstElementChild;
+        selected?.focus();
+    }
+}
 
 function setSidebarCollapsed(collapsed, persist = true) {
     els.app.classList.toggle('sidebar-collapsed', collapsed);
@@ -902,12 +1004,14 @@ async function bootstrap() {
 
     if (window.i18n && els.languageSelect) {
         window.i18n.populateSelect(els.languageSelect);
+        await setupLanguageDropdown();
         window.i18n.onChange(() => {
             window.i18n.applyTranslations();
             renderPauseButton(state.mediaRecorder?.state === 'paused');
             updateEstimate();
             updateControls();
             setSidebarCollapsed(els.app.classList.contains('sidebar-collapsed'), false);
+            refreshLanguageDropdown();
 
             // Re-tradueix el banner i l'estat actuals
             if (state.lastBanner?.key) {

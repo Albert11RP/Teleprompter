@@ -124,11 +124,31 @@
         });
     }
 
+    const LOCALE_FLAGS = {
+        ca: '🏴󠁥󠁳󠁣󠁴󠁿',
+        es: '🇪🇸',
+        en: '🇬🇧',
+        fr: '🇫🇷',
+        zh: '🇨🇳',
+        hi: '🇮🇳',
+        ar: '🇸🇦',
+    };
+
+    async function getLanguageNames() {
+        const dicts = await Promise.all(AVAILABLE_LOCALES.map(loadLocale));
+        return AVAILABLE_LOCALES.map((code, i) => ({
+            code,
+            name: dicts[i]?.languageName || code,
+            flag: LOCALE_FLAGS[code] || '',
+        }));
+    }
+
     window.i18n = {
         t,
         setLocale,
         getLocale: () => currentLocale,
         getAvailableLocales: () => [...AVAILABLE_LOCALES],
+        getLanguageNames,
         onChange,
         applyTranslations,
         populateSelect,
