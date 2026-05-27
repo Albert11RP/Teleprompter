@@ -88,7 +88,7 @@ function scroll() {
             if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                 finishRecording();
             }
-        }, 3000);
+        }, 500);
     } else {
         animationFrameId = requestAnimationFrame(scroll);
     }
